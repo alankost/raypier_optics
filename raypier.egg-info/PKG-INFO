@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: raypier
+Version: 0.2.3
+Summary: A optical ray-tracing package, for design, optimisation and visualisation of mirror/lens systems.
+Home-page: https://groups.google.com/u/1/g/python-raytrace
+Author: Bryan Cole
+Author-email: bryancole.cam@gmail.com
+License: GPL3
+Project-URL: Homepage, https://groups.google.com/u/1/g/python-raytrace
+Project-URL: Documentation, https://raypier-optics.readthedocs.io/en/latest/index.html
+Project-URL: Source, https://github.com/bryancole/raypier_optics.git
+Project-URL: Issues, https://github.com/bryancole/raypier_optics/issues
+Keywords: science engineering optics ray-tracing physics
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.7
+
+=========================================================
+Raypier - A Non-sequential optical ray-tracing framework
+=========================================================
+
+Raypier is a non-sequential ray-tracing framework for modelling optical systems. Its main features are:
+
+#. It's pretty fast. The tracing algorithms are written in Cython (i.e. C) and use efficient data-structures for handling many thousands of rays.
+#. Correctly handles polarisation
+#. Sequential and non-sequential tracing.
+#. Support for dispersion including a comprehensive library of glass-types (taken from refractive-index.info)
+   and diffraction-gratings
+#. Point Spread Function (PSF) and E-Field evaluation by summation of of Gaussian modes.
+#. Paraxial Gaussian mode evaluation covers generally astigmatic modes.
+#. Tracing support for conics section, general aspherics (conic + polnomial) and 2D polynomial surfaces. 
+#. Zurnike polynomial surface distortions.
+#. An interactive user-interface with 3D model/ray rendering through VTK. Tracing is performed "live".
+#. A modest selection of optic-types including singlet and achromatic doublet lenses (with AR coating), plane-mirrors, 
+   ellipsoidal mirrors, prisms
+#. STEP model/trace export for integration with external CAD systems
+  
+There are still a few "big" features missing:
+
+#. The documentation is not comprehensive (yet).
+
+  
+Requirements
+============
+
+Raypier requires:
+
+* python >= 3.6
+* numpy
+* scipy
+* traits / traitsui
+* Cython
+* Mayavi (for TVTK) / VTK
+* (Optionally) pythonocc_core - for STEP export
+* (Optionally) Chaco / Enable - for integrating line-plots into the UI
+
+
+Installation
+============
+
+The best way to install and run Raypier is using a Conda environment. 
+
+#. Install miniconda (or the full Anaconda distribution)
+#. Create a fresh conda-environment using the environment.yml file included 
+   in this raypier repo.
+    
